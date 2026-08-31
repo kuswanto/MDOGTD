@@ -162,13 +162,22 @@ The re-arm logic lives in a plain user script at `_scripts/rearm-recurring.js`, 
 
 ## 🔌 Plugins used
 
+**Required — vault won't work as intended without these:**
+
 | Plugin | Why |
 |---|---|
 | `obsidian-icon-folder` (Iconize) | Folder icons & colors in the explorer |
-| `homepage` | Opens `Home.md` on startup |
-| `quickadd` | Templates for every space (`+ Action`, `+ Project`, `+ Inbox`, `+ Waiting`, `+ Someday`, `+ Agenda`, `+ Area`, `+ Reference`, `+ Recurring Action`) + the `Recurring → Re-arm` macro |
-| `obsidian-style-settings` | Mojave-dark palette tweaks |
-| `auto-note-mover` · `slash-complete` · `nldates-obsidian` | Ancillary helpers |
+| `homepage` | Opens `Home.md` on startup (`Home.md:5-6`, `.obsidian/plugins/homepage/data.json:5`) |
+| `quickadd` | Templates for every space (`+ Action`, `+ Project`, `+ Inbox`, `+ Waiting`, `+ Someday`, `+ Agenda`, `+ Area`, `+ Reference`, `+ Recurring Action`) + the `Recurring → Re-arm` macro (`.obsidian/plugins/quickadd/data.json:3-320`) |
+| `obsidian-style-settings` | Theme palette & layout tweaks (moonstone / baseline) |
+
+**Removed in latest update — no longer shipped (reinstall manually if you want them):**
+
+| Plugin | Why it was there | Why removed |
+|---|---|---|
+| `auto-note-mover` | Auto-move `status: done` notes to `100 Completed/` | **Never configured** — no `data.json` existed and `README.md:131-135` now documents the manual flow (`status: done` → `completed` → manual move). With **Bases** as the data engine (`_bases/*.base` filter on `!list(status).contains("done")`) the move is archival only. |
+| `slash-complete` | Notion-style `/` autocomplete — replacement for disabled core `slash-command` (`.obsidian/core-plugins.json:17` → `"slash-command": false`) | GTD flow uses **QuickAdd** + core **Templates**, not `/` triggers. Re-enable the core Slash Commands or reinstall `slash-complete` if you prefer `/` block insertion. |
+| `nldates-obsidian` | Natural-language date parsing via `@` (`autocompleteTriggerPhrase: "@"`) | Dates are now entered via the **Properties** date picker and `{{DATE:YYYY-MM-DD}}` in `Templates/*.md` (`.obsidian/templates.json:2`). Reinstall for `@tomorrow` shorthand. |
 
 Core plugins in use: **Bases**, Daily notes, Templates, Properties, Workspaces, File recovery.
 
