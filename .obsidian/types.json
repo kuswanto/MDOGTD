@@ -1,0 +1,19 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "due": "date",
+    "start": "date",
+    "created": "date",
+    "completed": "date",
+    "next": "date",
+    "last": "date",
+    "project": "file",
+    "area": "file",
+    "context": "multitext",
+    "energy": "multitext",
+    "status": "multitext",
+    "type": "multitext"
+  }
+}

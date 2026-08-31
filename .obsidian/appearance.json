@@ -1,0 +1,9 @@
+{
+  "enabledCssSnippets": [
+    "base-toolbar-autohide"
+  ],
+  "theme": "moonstone",
+  "translucency": false,
+  "accentColor": "#7380d3",
+  "showRibbon": false
+}

@@ -1,0 +1,45 @@
+newItemFolder: 20 Next Actions
+newItemTemplate: Templates/Next Action.md
+
+filters:
+  and:
+    - file.hasTag("type/action")
+    - '!list(status).contains("done")'
+    - '!list(status).contains("archived")'
+    - 'file.folder != "Templates"'
+
+formulas:
+  days_left: 'if(due, (date(due) - today()).days, "")'
+
+properties:
+  context:
+    displayName: Context
+  project:
+    displayName: Project
+  formula.days_left:
+    displayName: "⏱ Due in"
+
+views:
+  - type: table
+    name: "Due Today & Overdue"
+    filters:
+      and:
+        - 'if(due, date(due) <= today(), false)'
+    order:
+      - file.name
+      - context
+      - project
+      - due
+      - formula.days_left
+  - type: table
+    name: "Due This Week"
+    filters:
+      and:
+        - 'if(due, date(due) > today(), false)'
+        - 'if(due, date(due) <= today() + "7d", false)'
+    order:
+      - file.name
+      - context
+      - project
+      - due
+      - formula.days_left

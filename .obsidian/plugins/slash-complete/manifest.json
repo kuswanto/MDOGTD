@@ -1,0 +1,11 @@
+{
+	"id": "slash-complete",
+	"name": "SlashComplete",
+	"version": "1.0.2",
+	"minAppVersion": "0.15.0",
+	"description": "Adds Notion-style slash command autocompletion, enabling fast and intuitive insertion of Markdown blocks, formatting, and commands directly from the editor. This is a direct replacement for the default slash command plugin.",
+	"author": "Spiderpig86",
+	"authorUrl": "https://github.com/Spiderpig86",
+	"fundingUrl": "https://github.com/sponsors/Spiderpig86",
+	"isDesktopOnly": false
+}

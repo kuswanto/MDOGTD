@@ -1,0 +1,53 @@
+newItemFolder: 20 Next Actions
+newItemTemplate: Templates/Recurring Action.md
+
+filters:
+  and:
+    - 'list(type).contains("recurring")'
+    - 'file.folder != "Templates"'
+
+formulas:
+  days_left: 'if(next, (date(next) - today()).days, "")'
+
+properties:
+  every:
+    displayName: Every
+  next:
+    displayName: Next due
+  context:
+    displayName: Context
+  energy:
+    displayName: Energy
+  formula.days_left:
+    displayName: "⏱ In"
+
+views:
+  - type: table
+    name: "Due Today & Overdue"
+    filters:
+      and:
+        - 'if(next, date(next) <= today(), false)'
+    order:
+      - file.name
+      - context
+      - formula.days_left
+      - every
+      - next
+  - type: table
+    name: "Due Next 7 Days"
+    filters:
+      and:
+        - 'if(next, date(next) > today(), false)'
+        - 'if(next, date(next) <= today() + "7d", false)'
+    order:
+      - file.name
+      - context
+      - formula.days_left
+      - every
+      - next
+  - type: list
+    name: "All recurring"
+    order:
+      - file.name
+      - every
+      - next

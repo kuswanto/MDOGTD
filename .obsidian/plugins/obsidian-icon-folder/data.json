@@ -1,0 +1,98 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "native",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "LiScroll",
+      "LiInbox",
+      "LiWrench",
+      "LiCalendarMinus2",
+      "LiCheckSmall"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": true,
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "native",
+    "debugMode": false,
+    "useInternalPlugins": false
+  },
+  "10 Inbox": {
+    "iconName": "LiInbox",
+    "iconColor": "#f82a2a"
+  },
+  "20 Next Actions": {
+    "iconName": "LiZap",
+    "iconColor": "#22c55e"
+  },
+  "30 Projects": {
+    "iconName": "LiFolder",
+    "iconColor": "#a855f7"
+  },
+  "40 Waiting": {
+    "iconName": "LiClock",
+    "iconColor": "#f59e0b"
+  },
+  "50 Someday Maybe": {
+    "iconName": "LiStar",
+    "iconColor": "#8d949e"
+  },
+  "60 Agendas": {
+    "iconName": "LiUsers",
+    "iconColor": "#14b8a6"
+  },
+  "70 Areas": {
+    "iconName": "LiTarget",
+    "iconColor": "#14b8a6"
+  },
+  "80 Reference": {
+    "iconName": "LiLibrary",
+    "iconColor": "#64748b"
+  },
+  "90 Journal": {
+    "iconName": "LiCalendar",
+    "iconColor": "#eab308"
+  },
+  "_bases": {
+    "iconName": "LiDatabase",
+    "iconColor": "#9aa5b1"
+  },
+  "Templates": {
+    "iconName": "LiNotebook",
+    "iconColor": "#9aa5b1"
+  },
+  "Home.md": {
+    "iconName": "LiHome",
+    "iconColor": "#5b8def"
+  },
+  "100 Completed": {
+    "iconName": "LiCheckCircle2",
+    "iconColor": "#2a5a39"
+  },
+  "20 Next Actions/_Next Actions.md": "LiZap",
+  "100 Completed/_Completed.md": "LiCheckSmall",
+  "50 Someday Maybe/_Someday Maybe.md": "LiCalendarMinus2",
+  "30 Projects/_Projects.md": "LiWrench",
+  "10 Inbox/_Inbox.md": "LiInbox",
+  "_scripts": {
+    "iconName": "LiScroll",
+    "iconColor": "#d6d6d6"
+  }
+}

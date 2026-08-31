@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Obsidian machine-local state (regenerated automatically)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.obsidian/*.cson
+
+# Trash
+.trash/
+
+# Themes: local choice only, not part of the vault
+.obsidian/themes/
+
+# Obsolete backup artifact
+.obsidian/plugins/quickadd/data.json.bak

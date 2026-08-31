@@ -1,0 +1,60 @@
+filters:
+  and:
+    - 'list(status).contains("done")'
+    - 'file.folder != "Templates"'
+
+properties:
+  status:
+    displayName: Status
+  type:
+    displayName: Type
+  area:
+    displayName: Area
+  project:
+    displayName: Project
+  context:
+    displayName: Context
+  completed:
+    displayName: Completed
+
+views:
+  - type: table
+    name: "Recently Completed"
+    order:
+      - file.name
+      - type
+      - project
+      - context
+      - completed
+    sort:
+      - property: completed
+        direction: DESC
+  - type: table
+    name: "Completed Actions"
+    filters:
+      and:
+        - "file.folder == \"100 Completed/Actions\""
+    order:
+      - file.name
+      - project
+      - context
+      - completed
+    sort:
+      - property: completed
+        direction: DESC
+  - type: table
+    name: "Completed Projects"
+    filters:
+      and:
+        - "file.folder == \"100 Completed/Projects\""
+    order:
+      - file.name
+      - area
+      - completed
+    sort:
+      - property: completed
+        direction: DESC
+  - type: list
+    name: "All Completed"
+    order:
+      - file.name

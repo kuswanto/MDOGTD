@@ -1,0 +1,40 @@
+filters:
+  and:
+    - list(status).contains("next")
+    - '!list(type).contains("project")'
+    - file.folder != "Templates"
+formulas:
+  days_left: if(due, (date(due) - today()).days, "")
+properties:
+  context:
+    displayName: Context
+  formula.days_left:
+    displayName: ⏱ Due in
+  project:
+    displayName: Project
+  energy:
+    displayName: Energy
+views:
+  - type: table
+    name: Next Actions
+    groupBy:
+      property: context
+      direction: ASC
+    order:
+      - file.name
+      - context
+      - energy
+      - project
+      - due
+      - formula.days_left
+    sort:
+      - property: file.name
+        direction: DESC
+      - property: project
+        direction: DESC
+      - property: energy
+        direction: ASC
+    columnSize:
+      note.project: 190
+newItemFolder: 20 Next Actions
+newItemTemplate: Templates/Next Action.md

@@ -1,0 +1,35 @@
+newItemFolder: 20 Next Actions
+newItemTemplate: Templates/Next Action.md
+
+filters:
+  and:
+    - 'list(project).contains(this)'
+    - '!list(status).contains("done")'
+    - '!list(status).contains("archived")'
+    - 'file.folder != "Templates"'
+
+formulas:
+  days_left: 'if(due, (date(due) - today()).days, "")'
+
+properties:
+  status:
+    displayName: Status
+  context:
+    displayName: Context
+  due:
+    displayName: Due
+  formula.days_left:
+    displayName: "⏱ Due in"
+
+views:
+  - type: table
+    name: "This Project — Open Actions"
+    order:
+      - file.name
+      - status
+      - context
+      - due
+      - formula.days_left
+    groupBy:
+      property: status
+      direction: ASC

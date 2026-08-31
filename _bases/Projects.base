@@ -1,0 +1,57 @@
+newItemFolder: 30 Projects
+newItemTemplate: Templates/Project.md
+
+filters:
+  and:
+    - file.hasTag("type/project")
+    - '!list(status).contains("archived")'
+    - 'file.folder != "Templates"'
+
+formulas:
+
+properties:
+  status:
+    displayName: Status
+  area:
+    displayName: Area
+  start:
+    displayName: Start
+  due:
+    displayName: Due
+  formula.days_left:
+    displayName: "⏱ Due in"
+
+views:
+  - type: cards
+    name: "Projects"
+    order:
+      - file.name
+      - status
+      - area
+      - start
+      - due
+      - formula.days_left
+  - type: table
+    name: "Active Projects"
+    filters:
+      and:
+        - 'list(status).contains("active")'
+    order:
+      - file.name
+      - area
+      - start
+      - due
+      - formula.days_left
+    groupBy:
+      property: area
+      direction: ASC
+    sort:
+      - property: start
+        direction: ASC
+  - type: list
+    name: "Project Index"
+    filters:
+      and:
+        - '!list(status).contains("archived")'
+    order:
+      - file.name

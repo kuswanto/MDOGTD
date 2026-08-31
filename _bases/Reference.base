@@ -1,0 +1,19 @@
+newItemFolder: 80 Reference
+
+filters:
+  and:
+    - 'list(type).contains("reference")'
+    - 'file.folder != "Templates"'
+
+properties:
+  area:
+    displayName: Area
+  tags:
+    displayName: Tags
+
+views:
+  - type: list
+    name: "Reference Library"
+    order:
+      - file.name
+      - area

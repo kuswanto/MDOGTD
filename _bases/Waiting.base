@@ -1,0 +1,29 @@
+newItemFolder: 40 Waiting
+newItemTemplate: Templates/Waiting.md
+
+filters:
+  and:
+    - 'list(status).contains("waiting")'
+    - '!list(type).contains("project")'
+    - 'file.folder != "Templates"'
+properties:
+  waiting_on:
+    displayName: Waiting on
+  due:
+    displayName: Expected
+  project:
+    displayName: Project
+views:
+  - type: table
+    name: Waiting For
+    groupBy:
+      property: waiting_on
+      direction: ASC
+    order:
+      - file.name
+      - waiting_on
+      - due
+      - project
+    sort:
+      - property: waiting_on
+        direction: ASC

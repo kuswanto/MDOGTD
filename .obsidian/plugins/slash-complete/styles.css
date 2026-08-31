@@ -1,0 +1,21 @@
+@media screen and (max-width: 64rem) {
+	.shortcut-container {
+		flex-direction: column;
+
+		.setting-item-info {
+			margin-inline-end: 0;
+			align-self: flex-start;
+		}
+
+		.setting-item-control {
+			align-items: flex-end;
+			flex-direction: column;
+			width: 100%;
+
+			input,
+			textarea {
+				width: 100%;
+			}
+		}
+	}
+}

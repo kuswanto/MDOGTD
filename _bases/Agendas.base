@@ -1,0 +1,21 @@
+newItemFolder: 60 Agendas
+newItemTemplate: Templates/Agenda.md
+
+filters:
+  and:
+    - 'list(type).contains("agenda")'
+    - 'file.folder != "Templates"'
+
+properties:
+  meeting:
+    displayName: Meeting
+  due:
+    displayName: Next review
+
+views:
+  - type: table
+    name: "Agendas"
+    order:
+      - file.name
+      - meeting
+      - due

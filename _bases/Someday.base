@@ -1,0 +1,25 @@
+newItemFolder: 50 Someday Maybe
+newItemTemplate: Templates/Someday.md
+
+filters:
+  and:
+    - 'list(status).contains("someday")'
+    - 'file.folder != "Templates"'
+
+properties:
+  area:
+    displayName: Area
+  created:
+    displayName: "Noted"
+
+views:
+  - type: cards
+    name: "Someday Maybe"
+    order:
+      - file.name
+      - area
+      - created
+  - type: list
+    name: "Quick List"
+    order:
+      - file.name

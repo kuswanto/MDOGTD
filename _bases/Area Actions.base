@@ -1,0 +1,39 @@
+newItemFolder: 20 Next Actions
+newItemTemplate: Templates/Next Action.md
+
+filters:
+  and:
+    - 'list(area).contains(this)'
+    - 'file.folder != "Templates"'
+
+formulas:
+  days_left: 'if(due, (date(due) - today()).days, "")'
+
+properties:
+  type:
+    displayName: Type
+  status:
+    displayName: Status
+  context:
+    displayName: Context
+  project:
+    displayName: Project
+  due:
+    displayName: Due
+  formula.days_left:
+    displayName: "⏱ Due in"
+
+views:
+  - type: table
+    name: "This Area — Actions & Projects"
+    order:
+      - file.name
+      - type
+      - status
+      - context
+      - project
+      - due
+      - formula.days_left
+    groupBy:
+      property: type
+      direction: ASC

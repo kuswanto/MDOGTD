@@ -1,0 +1,37 @@
+newItemFolder: 10 Inbox
+newItemTemplate: Templates/Inbox Item.md
+
+filters:
+  and:
+    - list(status).contains("inbox")
+    - file.folder != "Templates"
+properties:
+  context:
+    displayName: Context
+  due:
+    displayName: Due
+  created:
+    displayName: Captured
+  type:
+    displayName: Type
+views:
+  - type: table
+    name: Inbox — capture
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - created
+      - due
+      - context
+    sort:
+      - property: context
+        direction: ASC
+      - property: type
+        direction: DESC
+      - property: due
+        direction: ASC
+      - property: created
+        direction: ASC

@@ -1,0 +1,20 @@
+/* Auto-hide base toolbar headers in embeds; reveal on hover */
+.markdown-reading-view .bases-embed .bases-toolbar,
+.markdown-reading-view .internal-embed .bases-toolbar {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0;
+  border: none;
+  pointer-events: none;
+  transition: max-height 160ms ease, opacity 160ms ease, padding 160ms ease;
+}
+
+.markdown-reading-view .bases-embed:hover .bases-toolbar,
+.markdown-reading-view .internal-embed:hover .bases-toolbar {
+  max-height: 64px;
+  opacity: 1;
+  border-bottom: var(--bases-header-border-width) solid var(--background-modifier-border);
+  padding: var(--size-2-2);
+  pointer-events: auto;
+}
